@@ -17,11 +17,11 @@ def classify_image(img_path):
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
 
-    # Classify the image and get the result
+    # Classify the image 
     preds = model.predict(x)
     results = decode_predictions(preds, top=1)
 
-    # Filter electronic devices only
+    # Get the result
     if results:
         for result in results[0]:
             label=result[1]
